@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="micropos.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:micropos.UWP"
+    RequestedTheme="Light">
+
+</Application>
