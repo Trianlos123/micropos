@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="micropos.Views.LoginPage">
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Login}">
+            <Grid BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Source="twk.png" Margin="0,50,0,30"/>
+                <StackLayout 
+                    Grid.Row="1"
+                    Padding="30,20">
+                    <Entry 
+                        Keyboard="Numeric"
+                        Placeholder="Usuario..."
+                        Text="{Binding User, Mode=TwoWay}"/>
+                    <Entry 
+                        IsPassword="True"
+                        Placeholder="Contraseña..."
+                        Text="{Binding Password, Mode=TwoWay}"/>
+                    <ActivityIndicator
+                            IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                            VerticalOptions="Center">
+                    </ActivityIndicator>
+                    <Button 
+                        BackgroundColor="DarkBlue"
+                        Command="{Binding LoginCommand}"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="Ingresar" 
+                        TextColor="White"/>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
